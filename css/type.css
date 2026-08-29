@@ -1,0 +1,257 @@
+/* ==========================================================================
+   TYPE PAGE (type.html) 専用スタイル
+   中央のパネルは添付いただいたモニター型画像(type-monitor-frame.png)を
+   そのまま使用し、画面の黒い部分(実測: 左14.3% 上12.6% 幅71.1% 高さ70.5%)
+   の中だけにHEVIL〜ENEMYのアイコン+テキストを配置している。
+   ========================================================================== */
+
+.type-page {
+  background-color: var(--pale-bg);
+}
+
+.type-page .site-footer {
+  margin-top: 5cm;
+}
+
+.type-page .site-header {
+  border-bottom: none;
+}
+
+.type-page .site-logo img {
+  filter: invert(1) brightness(0.15);
+}
+
+.type-page .global-nav a {
+  padding: 3px 14px;
+  background-color: #000000;
+  border: none;
+}
+
+.type-page .global-nav a:hover,
+.type-page .global-nav a:focus-visible {
+  background-color: var(--pale-mint);
+}
+
+/* --- TYPEタイトル(左右に装飾アイコン) --- */
+.type-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: var(--space-4) 0 var(--space-3);
+}
+
+.type-title-row img.type-flourish {
+  height: 40px;
+  width: auto;
+}
+
+.type-title-row h1 {
+  font-family: 'DotGothic16', var(--font-gothic);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #130200;
+  letter-spacing: 0.04em;
+}
+
+/* タイトル説明文: 元データはArial Italic、色#212938 */
+.type-lede {
+  max-width: 62em;
+  margin: 0 auto var(--space-4);
+  padding-inline: clamp(var(--space-3), 4vw, var(--space-4));
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-style: italic;
+  font-size: clamp(12px, 1.7vw, 18px);
+  line-height: 1.6;
+  color: #212938;
+  text-align: center;
+}
+
+.type-lede p {
+  margin: 0;
+}
+
+.type-lede p + p {
+  margin-top: 0.6em;
+}
+
+/* タイトルと写真パネルの間の装飾GIF */
+.type-deco-flourish {
+  display: block;
+  height: 30px;
+  width: auto;
+  margin: 0 auto var(--space-3);
+}
+
+/* --- モニター型パネル --- */
+.type-photo-panel {
+  position: relative;
+  margin-inline: auto;
+  width: 88%;
+  aspect-ratio: 3000 / 2452; /* 添付画像の実比率 */
+}
+
+.type-monitor-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 画面の黒い部分だけに中身を収める(実測値) */
+.type-screen {
+  position: absolute;
+  left: 14.3%;
+  top: 12.6%;
+  width: 71.1%;
+  height: 70.5%;
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* 説明文: タイプライター風。1文字ずつJSで追加され、末尾に点滅するカーソルを表示する */
+.type-description {
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  right: 6%;
+  bottom: 6%;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-size: clamp(15px, 2.1vw, 20px);
+  line-height: 1.6;
+  color: var(--pale-bg);
+  text-align: left;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* 項目名(HEVIL等): 上部のTYPEタイトルと同じフォント */
+.type-description .type-desc-name {
+  display: block;
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 2.2vw, 22px);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4em;
+}
+
+.type-description .type-desc-body-ja {
+  display: block;
+  margin-top: 0.8em;
+  font-family: 'Zen Kaku Gothic New', var(--font-gothic);
+  font-style: normal;
+}
+
+.type-description::after {
+  content: "▍";
+  display: inline-block;
+  margin-left: 2px;
+  animation: type-cursor-blink 0.9s steps(1) infinite;
+}
+
+@keyframes type-cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* --- タイプ選択ラベル群(画面内に収まるよう小さめに調整) --- */
+.type-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(6px, 2vh, 20px);
+  width: 100%;
+  height: 100%;
+  padding: 10mm;
+  box-sizing: border-box;
+}
+
+.type-selector .type-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(10px, 3vw, 32px);
+  flex-wrap: wrap;
+}
+
+/* 上二段(HEVIL〜HEIBORIS)は左右均等に黒い部分いっぱいに配置する */
+.type-selector .type-row:nth-child(-n + 2) {
+  justify-content: space-between;
+  padding-inline: 15mm;
+}
+
+.type-selector button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.type-selector .type-icon {
+  width: clamp(32px, 7.5vw, 84px);
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* 個別サイズ調整 */
+.type-selector button[data-type="HELAUNE"] .type-icon {
+  width: calc(clamp(32px, 7.5vw, 84px) * 0.7225);
+}
+
+.type-selector button[data-type="HECRIS"] .type-icon {
+  width: calc(clamp(32px, 7.5vw, 84px) * 1.265);
+}
+
+.type-selector .type-label {
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(11px, 1.9vw, 19px);
+  color: var(--pale-bg);
+  text-decoration: underline;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.type-selector button.is-active .type-label {
+  color: #ffffff;
+}
+
+/* --- 装飾バー(横長) --- */
+.type-bar-divider {
+  position: absolute;
+  left: 21.06%;
+  width: 57.59%;
+  bottom: 18%;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  transform: scale(1.1, 0.85);
+}
+
+@media (max-width: 700px) {
+  .type-selector .type-icon {
+    width: 20px;
+  }
+  .type-selector .type-label {
+    font-size: 7px;
+  }
+}

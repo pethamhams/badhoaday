@@ -1,0 +1,13 @@
+{
+  "types": ["ALL", "HEVIL", "HENJEL", "HENIMAL", "HECRIS", "HENSECTA", "HELAUNE", "HEIVORG", "HEIVOLIS", "HELESTARIA", "HUMAN"],
+  "slotCount": 60,
+  "characters": [
+    {
+      "slot": 0,
+      "name": "ZOWHOME",
+      "type": "HELAUNE",
+      "image": "assets/zowhome-face.png",
+      "link": "character-zowhome.html"
+    }
+  ]
+}

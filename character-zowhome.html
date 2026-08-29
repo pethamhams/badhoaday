@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOWHOME — CHARACTER DATA FILE — B∀D H〇∀ D∀Y</title>
+  <meta name="description" content="ZOWHOME(ゾーホーム / 臓家) のキャラクターデータファイル。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheets: css/js/data/assetsフォルダに分けた構成 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/character-detail.css" />
+</head>
+<body class="detail-page">
+
+  <div class="site-wrap">
+    <!-- ================= HEADER(前回同様、淡い水色の帯+黒ナビ画像) ================= -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="assets/logo.png" alt="B∀D H〇∀ D∀Y" />
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="about.html"><img src="assets/nav_mint_about.png" alt="ABOUT" /></a></li>
+          <li><a href="world.html"><img src="assets/nav_mint_world.png" alt="WORLD" /></a></li>
+          <li><a href="character.html" class="is-active" aria-current="page"><img src="assets/nav_mint_character.png" alt="CHARACTER" /></a></li>
+          <li><a href="gallery.html"><img src="assets/nav_mint_gallery.png" alt="GALLERY" /></a></li>
+          <li><a href="store.html"><img src="assets/nav_mint_store.png" alt="STORE" /></a></li>
+          <li><a href="links.html"><img src="assets/nav_mint_limks.png" alt="LIMKS" /></a></li>
+          <li><a href="interactive.html"><img src="assets/nav_mint_interactive.png" alt="INTERACTIVE" /></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= CHARACTER DATA FILE タグ ================= -->
+    <div class="detail-tag">
+      <img src="assets/tag-character-data-file.png" alt="CHARACTER DATA FILE" />
+    </div>
+  </div>
+
+  <!-- ================= 黒背景ゾーン(左右に5mmの余白) ================= -->
+  <div class="detail-black-zone">
+    <div class="site-wrap">
+
+      <!-- ---- 上段: 写真 | DATA ---- -->
+      <div class="detail-upper">
+        <div class="detail-photo-col">
+          <!-- SD/顔アイコン(全身イラストとは重ねず、上に配置) -->
+          <img class="detail-photo-sd" src="assets/zowhome-sd.png" alt="ZOWHOME SDアイコン" />
+          <!-- 全身イラスト(Toshin) -->
+          <img class="detail-photo-full" src="assets/zowhome-fullbody.png" alt="ZOWHOME 全身イラスト" />
+        </div>
+
+        <div class="detail-data-col">
+          <!-- NAME(見出し)が先、カタカナ/漢字名はその下(DATAと同じフォントサイズ) -->
+          <div class="detail-name-row">
+            <div class="detail-name-en" id="detail-name-en">ZOWHOME</div>
+            <!-- 小さな装飾スタンプ: NAMEのすぐ横に配置 -->
+            <img class="detail-deco-stamp" src="assets/zowhome-deco-stamp.gif" alt="" aria-hidden="true" />
+          </div>
+          <div class="detail-name-jp" id="detail-name-jp">ゾーホーム / 臓家</div>
+
+          <!-- DATAは項目リストの一部として同じフォント・サイズで表示 -->
+          <div class="detail-fields" id="detail-fields">
+            <!-- character-detail.js が character-zowhome.json から動的に描画する -->
+            <!-- 先頭に「DATA」見出し行を含む -->
+          </div>
+
+          <!-- CATCH COPY: Notion管理 -->
+          <div class="detail-catchcopy" id="detail-catchcopy"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 黒背景ゾーンの端まで伸びる横線(site-wrapのpaddingの影響を受けないよう独立させている) -->
+    <div class="detail-full-divider"></div>
+
+    <div class="site-wrap">
+      <!-- ---- 下段: DATA MORE(Notion管理、DATAと同じ書式) ---- -->
+      <div class="detail-lower">
+        <div class="detail-fields" id="detail-fields-more">
+          <!-- character-detail.js が動的に描画する -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 黒背景ゾーンのすぐ下に配置する装飾バナー(back blackが手前に来るよう重ね順を調整) -->
+  <div class="site-wrap detail-banner-wrap">
+    <img class="detail-deco-banner" src="assets/zowhome-deco-banner.gif" alt="" aria-hidden="true" />
+  </div>
+
+  <!-- ================= IMAGE GALLERY(淡い水色に戻る。中央寄せの見出しのみ、中身は空欄) ================= -->
+  <div class="site-wrap">
+    <div class="detail-gallery">
+      <div class="detail-gallery-heading">
+        <img src="assets/heading-image-gallery.png" alt="IMAGE GALLERY" />
+      </div>
+      <!-- ここに実際の画像を後から直接貼り付ける想定。カード枠など余計な装飾は追加しない -->
+      <div class="detail-gallery-empty">
+        <a href="index.html" class="detail-deco-footer-link">
+          <img class="detail-deco-footer" src="assets/zowhome-deco-footer.gif" alt="TOPへ戻る" />
+        </a>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER(区切り線なし) ================= -->
+    <footer class="site-footer site-footer--noline">
+      <div class="footer-meta">
+        <span>&copy; B∀D H〇∀ D∀Y</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/character-detail.js"></script>
+</body>
+</html>

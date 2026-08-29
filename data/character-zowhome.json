@@ -1,0 +1,32 @@
+{
+  "name": "ZOWHOME",
+  "nameJa": "ゾーホーム / 臓家",
+  "catchCopy": "",
+  "fields": [
+    { "item": "TYPE", "desc": "Helaune" },
+    { "item": "SUB TYPE", "desc": "" },
+    { "item": "GOTH TYPE", "desc": "Japan goth" },
+    { "item": "AFFILIATION", "desc": "HELLNEL" },
+    { "item": "OCCUPATION", "desc": "" },
+    { "item": "AGE", "desc": "21" },
+    { "item": "HEIGHT", "desc": "166" },
+    { "item": "LIKES", "desc": "" },
+    { "item": "DISLIKES", "desc": "" },
+    { "item": "HOBBIES", "desc": "" },
+    { "item": "DANGER", "desc": "LEVEL Ⅳ" },
+    { "item": "ABILITIES", "desc": "" },
+    { "item": "WEAPON", "desc": "" },
+    { "item": "SEXUAL", "desc": "Homosexuality" },
+    { "item": "FIRST PERSON", "desc": "" },
+    { "item": "SECOND PERSON", "desc": "" }
+  ],
+  "dataMore": {
+    "type": "",
+    "biography": "",
+    "background": ""
+  },
+  "images": {
+    "fullBody": "",
+    "face": ""
+  }
+}

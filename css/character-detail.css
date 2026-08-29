@@ -1,0 +1,271 @@
+/* ==========================================================================
+   CHARACTER DETAIL PAGE (character-zowhome.html など) 専用スタイル
+   元データのSVG解析結果:
+   - 上部: 淡い水色の帯（ロゴ・ナビ・「CHARACTER DATA FILE」タグ）
+   - 中央: 黒背景ゾーン（写真 | DATA項目、上下2分割の罫線あり、左右5mm余白）
+   - 下部: 淡い水色に戻り「IMAGE GALLERY」
+   装飾GIF/PNGは重ならないよう縦積み(通常フロー)で配置し、
+   黒背景ゾーンはその内容量に応じて自然に縦へ伸びる。
+   ========================================================================== */
+
+.detail-page {
+  background-color: var(--pale-bg);
+}
+
+/* このページはranfren系キャラページのように常に左端寄せにし、
+   画面が広がった時に伸びるのはDATA内容(右カラム)のみにする */
+.detail-page .site-wrap {
+  max-width: none;
+  margin-inline: 0;
+}
+
+.detail-page .site-header {
+  border-bottom: none;
+  justify-content: flex-start;
+  gap: var(--space-4);
+}
+
+.detail-page .site-logo img {
+  filter: invert(1) brightness(0.15);
+}
+
+.detail-page .global-nav a {
+  padding: 2px 14px;
+  background-color: #000000;
+  border: none;
+}
+
+.detail-page .global-nav a img {
+  filter: none;
+}
+
+.detail-page .global-nav a:hover,
+.detail-page .global-nav a:focus-visible {
+  background-color: var(--pale-mint);
+}
+
+/* --- CHARACTER DATA FILE タグ(淡い帯の上、黒イタリック) --- */
+.detail-tag {
+  padding: var(--space-3) 0 var(--space-2);
+}
+
+.detail-tag img {
+  height: clamp(12px, 3vw, 20px);
+}
+
+/* --- 黒背景ゾーン: 左右に5mmの余白を確保。中身の量に応じて自然に縦へ伸びる ---
+   バナーとの重なり部分でback blackが手前に来るよう、z-indexを上げている */
+.detail-black-zone {
+  position: relative;
+  z-index: 2;
+  background-color: #000000;
+  margin-inline: 5mm;
+}
+
+/* 写真列は固定幅で伸びない。DATA列(右)だけが画面幅に応じて伸びる */
+.detail-upper {
+  display: grid;
+  grid-template-columns: 480px minmax(0, 1fr);
+  gap: 0;
+}
+
+/* 黒背景ゾーンの端まで伸びる横線(site-wrapのpaddingの影響を受けない) */
+.detail-full-divider {
+  border-bottom: 1px solid var(--line-bright);
+  width: 100%;
+}
+
+/* 写真列: SD → 全身イラスト → 参考イラストの順に縦積み(重なりなし) */
+.detail-photo-col {
+  border-right: 1px solid var(--line-bright);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.detail-photo-sd {
+  width: 33%; /* 元想定サイズの80% */
+  height: auto;
+  align-self: flex-start;
+}
+
+.detail-photo-full {
+  width: 120%;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+
+.detail-photo-col .detail-deco-ref {
+  width: 32%; /* 元想定サイズの80% */
+  height: auto;
+}
+
+.detail-data-col {
+  position: relative;
+  padding: 24px 32px;
+}
+
+/* NAME行: NAMEとスタンプを横並びに */
+.detail-name-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+/* NAME: 65pt→50ptに変更 */
+.detail-name-en {
+  font-family: 'Noto Sans JP', var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(28px, 6vw, 50px);
+  color: #edeef0;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+/* 小さな装飾スタンプ: NAMEのすぐ横、120%に拡大 */
+.detail-data-col .detail-deco-stamp {
+  height: 60px; /* NAME(50px)基準を120%相当に拡大 */
+  width: auto;
+}
+
+/* カタカナ/漢字名はNAMEの下。DATAと同じ14pxに統一 */
+.detail-name-jp {
+  font-family: 'BIZ UDPGothic', 'Noto Sans CJK JP', var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  color: #edeef0;
+  margin-bottom: 20px;
+}
+
+/* DATA見出し行 + TYPE〜SECOND PERSONの各項目、DATA MOREの項目も全て同じ14pxで統一 */
+.detail-fields {
+  font-size: clamp(12px, 1.8vw, 16px);
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.detail-fields .field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.detail-fields .field-item {
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-weight: 700;
+  color: #edeef0;
+  white-space: nowrap;
+}
+
+.detail-fields .field-sep {
+  font-family: 'Noto Sans JP', var(--font-ui);
+  font-weight: 300;
+  color: #edeef0;
+  padding: 0 4px;
+}
+
+.detail-fields .field-desc {
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #edeef0;
+}
+
+/* CATCH COPY: Notion管理。右端の縦書き */
+.detail-catchcopy {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  writing-mode: vertical-rl;
+  font-family: 'Liberation Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  color: #edf1f2;
+  letter-spacing: 0.05em;
+}
+
+/* --- 下段: DATA MORE(Notion管理。DATAと同じ書式・サイズ)
+   左右のpaddingをclampにして、狭い画面でもback black内に収まるようにする。
+   ここは伸びる対象ではないので、幅を固定し左端に寄せる --- */
+.detail-lower {
+  max-width: 480px;
+  padding: 40px clamp(12px, 4vw, 32px);
+}
+
+/* 黒背景ゾーンのすぐ下に配置する装飾バナー(80%縮小) */
+.detail-banner-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.detail-deco-banner {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin: -2mm auto 0;
+}
+
+/* --- IMAGE GALLERY (淡い水色に戻る。見出しは中央寄せ) --- */
+.detail-gallery {
+  padding: 40px 0 60px;
+  text-align: center;
+}
+
+.detail-gallery-heading {
+  text-align: center;
+}
+
+.detail-gallery-heading img {
+  height: 20px;
+  display: inline-block;
+}
+
+/* 画像を直接貼る想定の大きな空欄。カード枠等の装飾は追加しない */
+.detail-gallery-empty {
+  position: relative;
+  height: 900px;
+}
+
+.detail-deco-footer-link {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+.detail-deco-footer {
+  width: 100%;
+  max-width: 143px; /* 前回サイズ(130px)の110% */
+  height: auto;
+  display: block;
+}
+
+/* フッターの区切り線は不要 */
+.site-footer.site-footer--noline {
+  border-top: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 800px) {
+  .detail-upper {
+    grid-template-columns: 1fr;
+  }
+  .detail-photo-col {
+    border-right: none;
+    border-bottom: 1px solid var(--line-bright);
+  }
+  .detail-full-divider {
+    border-bottom-color: var(--line-bright);
+  }
+  .detail-catchcopy {
+    display: none;
+  }
+  .detail-gallery-empty {
+    height: 500px;
+  }
+}

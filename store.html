@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STORE — B∀D H〇∀ D∀Y</title>
+  <meta name="description" content="B∀D H〇∀ D∀Y 公式グッズストア。物販・デジタルアイテムはBOOTH / SUZURIにて。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheets: css/js/data/assetsフォルダに分けた構成 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/store.css" />
+</head>
+<body class="store-page">
+
+  <!-- 背景の星型GIF装飾(back レイヤーそのまま) -->
+  <div class="store-bg-deco" aria-hidden="true">
+    <img src="assets/store-deco-star.gif" style="left:0; top:1622px; width:300px;" alt="" />
+    <img src="assets/store-deco-star.gif" style="left:340px; top:2818px; width:300px;" alt="" />
+    <img src="assets/store-deco-star.gif" style="left:1140px; top:2071px; width:300px;" alt="" />
+    <img src="assets/store-deco-star.gif" style="left:771px; top:1389px; width:300px;" alt="" />
+    <img src="assets/store-deco-bg1.gif" style="left:-26px; top:840px; width:279px;" alt="" />
+    <img src="assets/store-deco-bg2.gif" style="right:0; top:3297px; width:318px;" alt="" />
+  </div>
+
+  <!-- ================= HEADER+マーキー+タイトルをまとめて画面端まで広げる背景の中に配置 ================= -->
+  <div class="store-header-wrap">
+    <img class="store-header-bg" src="assets/store-header-bg.gif" alt="" aria-hidden="true" />
+
+    <div class="site-wrap">
+      <header class="site-header">
+        <a href="index.html" class="site-logo">
+          <img src="assets/logo.png" alt="B∀D H〇∀ D∀Y" />
+        </a>
+
+        <nav class="global-nav" aria-label="グローバルナビゲーション">
+          <ul>
+            <li><a href="about.html"><img src="assets/nav_cyan_about.png" alt="ABOUT" /></a></li>
+            <li><a href="world.html"><img src="assets/nav_cyan_world.png" alt="WORLD" /></a></li>
+            <li><a href="character.html"><img src="assets/nav_cyan_character.png" alt="CHARACTER" /></a></li>
+            <li><a href="gallery.html"><img src="assets/nav_cyan_gallery.png" alt="GALLERY" /></a></li>
+            <li><a href="store.html" class="is-active" aria-current="page"><img src="assets/nav_cyan_store.png" alt="STORE" /></a></li>
+            <li><a href="links.html"><img src="assets/nav_cyan_limks.png" alt="LIMKS" /></a></li>
+            <li><a href="interactive.html"><img src="assets/nav_cyan_interactive.png" alt="INTERACTIVE" /></a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <!-- ================= スクロールする案内文(画面端まで) ================= -->
+    <div class="store-marquee-bar">
+      <div class="store-marquee-track">
+        <span
+          >STORE // Physical goods &amp; digital items available. // Most goods are
+          available on BOOTH and SUZURI. // Small stock. Limited quantities. //
+          Thank you for supporting B∀D H〇∀ D∀Y.</span
+        >
+      </div>
+    </div>
+
+    <!-- ================= STORE タイトル ================= -->
+    <div class="site-wrap">
+      <div class="store-title-row">
+        <h1>STORE<img src="assets/store-title-icon.gif" alt="" aria-hidden="true" /></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+    <!-- ================= 商品グリッド ================= -->
+    <div class="store-grid" id="store-grid">
+      <!-- store.js が store-products.json から動的に描画する -->
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-meta">
+        <span>&copy; B∀D H〇∀ D∀Y</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/store.js"></script>
+</body>
+</html>

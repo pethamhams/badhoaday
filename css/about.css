@@ -1,0 +1,276 @@
+/* ==========================================================================
+   ABOUT PAGE (about.html) 専用スタイル
+   PDF参照: 曇天の草原/空を敷き詰めた背景の上に、黒背景の説明ボックスが並ぶ構成
+   ========================================================================== */
+
+/* --- ヘッダー: 実データのピクセル解析により、CHARACTERページと同じ
+   「白系背景+黒塗りナビボタン+淡いミント文字画像」の構成と判明したため統一 --- */
+.about-page .site-header {
+  border-bottom: none;
+  background-color: var(--pale-bg);
+  margin: 0 calc(-1 * var(--space-4));
+  padding-inline: var(--space-4);
+}
+
+.about-page .site-logo img {
+  filter: invert(1) brightness(0.15);
+}
+
+.about-page .global-nav a {
+  padding: 2px 14px;
+  background-color: #000000;
+  border: none;
+}
+
+.about-page .global-nav a img {
+  filter: none;
+}
+
+.about-page .global-nav a:hover,
+.about-page .global-nav a:focus-visible {
+  background-color: var(--pale-mint);
+}
+
+.about-page .global-nav a.is-active {
+  background-color: var(--pale-mint);
+}
+
+/* --- 全面に敷く"曇天の草原"タイル背景 ---
+   実画像の代わりに、CSSのグラデーションだけで空→地平線→草原の
+   1タイル分を作り、それを縦横に繰り返して継ぎ目のあるレトロな
+   タイル背景を再現する。 */
+.field-bg {
+  position: relative;
+  background-color: #16161a;
+  background-image:
+    /* タイルの継ぎ目線（縦） */
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.18) 0,
+      rgba(0, 0, 0, 0.18) 1px,
+      transparent 1px,
+      transparent 480px
+    ),
+    /* タイルの継ぎ目線（横） */
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.18) 0,
+      rgba(0, 0, 0, 0.18) 1px,
+      transparent 1px,
+      transparent 620px
+    ),
+    /* 草原のノイズ質感 */
+    repeating-linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.025) 0 2px,
+      transparent 2px 5px
+    ),
+    /* 空→地平線→草原 のグラデーション（1タイル分） */
+    linear-gradient(
+      to bottom,
+      #6d7bc9 0%,
+      #8f9ad8 22%,
+      #cdd3ec 42%,
+      #eef0f8 50%,
+      #333336 51%,
+      #1a1a1c 100%
+    );
+  background-size: 480px 620px, 480px 620px, 480px 620px, 480px 620px;
+  background-repeat: repeat;
+}
+
+/* --- ページ全体をこの背景の上に載せる --- */
+.about-main {
+  padding-block: 40px 56px;
+}
+
+/* --- Hero: 「What is B∀D H〇∀ D∀Y ?」ボックス --- */
+.about-hero {
+  max-width: 720px;
+  margin-inline: auto;
+  background: rgba(3, 3, 4, 0.92);
+  border: 1px solid var(--line-bright);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(18px, 3vw, 23px);
+  letter-spacing: 0.06em;
+  color: var(--ink-bright);
+  margin-bottom: 14px;
+}
+
+.about-hero p {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* --- About This Site: 罫線付きの説明ボックス --- */
+.about-site-box {
+  max-width: 480px;
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: rgba(5, 5, 6, 0.82);
+  border: 1px solid var(--line-bright);
+}
+
+.about-site-box h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--ink-bright);
+  margin-bottom: 8px;
+}
+
+.about-site-box p {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.about-site-box .genres-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+  margin-bottom: 4px;
+}
+
+.about-site-box .genres-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-blue-glow);
+}
+
+/* --- LINKS: 5枚の黒タイル --- */
+.about-links {
+  margin-top: 32px;
+}
+
+.about-links h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: var(--ink-bright);
+  margin-bottom: 10px;
+}
+
+.link-tiles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.link-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: rgba(3, 3, 4, 0.9);
+  border: 1px solid var(--line-bright);
+  display: flex;
+  padding: 6px;
+  transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+}
+
+.link-tile span {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink-bright);
+}
+
+/* PDF同様、奇数番目は文字を上寄せ、偶数番目は下寄せにして
+   当時のバナー配置のばらつきを再現する */
+.link-tile:nth-child(odd) {
+  align-items: flex-start;
+}
+
+.link-tile:nth-child(even) {
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.link-tile:hover,
+.link-tile:focus-visible {
+  border-color: var(--accent-blue);
+  background: rgba(92, 109, 196, 0.12);
+}
+
+/* --- CREATOR セクション --- */
+.creator-section {
+  max-width: 560px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-bright);
+}
+
+.creator-section h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--ink-bright);
+  margin-bottom: 10px;
+}
+
+.creator-info {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: rgba(3, 3, 4, 0.75);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+}
+
+.creator-info dt {
+  display: inline-block;
+  min-width: 80px;
+  color: var(--ink-dim);
+}
+
+.creator-info dd {
+  display: inline;
+}
+
+.creator-info .creator-row {
+  margin-bottom: 1px;
+}
+
+.creator-info .creator-links {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.creator-info a {
+  color: var(--accent-blue-glow);
+  word-break: break-all;
+}
+
+.creator-info a:hover,
+.creator-info a:focus-visible {
+  text-decoration: underline;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .link-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-hero,
+  .about-site-box,
+  .creator-section {
+    max-width: 100%;
+  }
+}

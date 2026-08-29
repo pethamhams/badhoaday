@@ -1,0 +1,32 @@
+{
+  "boothUrl": "https://nmexoxo.booth.pm/",
+  "products": [
+    { "slot": 0,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-c.png", "badge": true },
+    { "slot": 1,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": true },
+    { "slot": 2,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": true },
+
+    { "slot": 3,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-c.png", "badge": false },
+    { "slot": 4,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-d.png", "badge": false },
+    { "slot": 5,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-d.png", "badge": false },
+
+    { "slot": 6,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-c.png", "badge": false },
+    { "slot": 7,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": false },
+    { "slot": 8,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": false },
+
+    { "slot": 9,  "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-b.png", "badge": false },
+    { "slot": 10, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-d.png", "badge": false },
+    { "slot": 11, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-d.png", "badge": false },
+
+    { "slot": 12, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-c.png", "badge": false },
+    { "slot": 13, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": false },
+    { "slot": 14, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": false },
+
+    { "slot": 15, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-b.png", "badge": false },
+    { "slot": 16, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": false },
+    { "slot": 17, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-a.png", "badge": false },
+
+    { "slot": 18, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-c.png", "badge": false },
+    { "slot": 19, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-d.png", "badge": false },
+    { "slot": 20, "name": "sold out", "price": "0.00 JPY", "image": "assets/store-product-d.png", "badge": false }
+  ]
+}

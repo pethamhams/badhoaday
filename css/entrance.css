@@ -1,0 +1,110 @@
+/* ==========================================================================
+   ENTRANCE PAGE (entrance.html) 専用スタイル
+   ヘッダー・十字架テキスト・音楽案内はすべて1枚のpng画像(entrance-text.png)
+   として反映済み。GIF(entrance-deco.gif)だけがENTERの役割を持つ
+   クリック可能な要素として重なる。
+   ========================================================================== */
+
+.entrance-page {
+  background-color: #000000;
+}
+
+/* 元データの比率(1440 x 2197)を保ったキャンバス。
+   画像の実サイズに応じて高さが決まる、普通のWebページと同じ構造にすることで
+   ブラウザの拡大縮小(Ctrl+スクロール等)が正しく機能するようにしている。 */
+.entrance-canvas {
+  position: relative;
+  width: 100%;
+}
+
+/* テキストをまとめたpng画像。width:100%で幅に合わせ、高さは比率通りに自動計算される */
+.entrance-text-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ENTER: gif自体がリンクになっている。テキスト画像の内容(約80%地点)の下に配置 */
+.entrance-enter-gif {
+  position: absolute;
+  top: 83%;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin-inline: auto;
+  display: inline-block;
+  line-height: 0;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.entrance-enter-gif img {
+  width: clamp(90px, 12vw, 140px);
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.entrance-enter-gif:hover,
+.entrance-enter-gif:focus-visible {
+  filter: brightness(1.3);
+}
+
+.entrance-enter-gif:hover img,
+.entrance-enter-gif:focus-visible img {
+  transform: scale(1.04);
+}
+
+/* --- 出現演出: ふわっと浮かび上がる --- */
+.entrance-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: entrance-reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* テキスト画像は上から下へ段階的に見えてくる演出(1枚画像でも"出現順"を感じさせる) */
+.entrance-text-image {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  animation: entrance-text-wipe 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
+}
+
+@keyframes entrance-text-wipe {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.entrance-enter-gif   { animation-delay: 1.2s; }
+
+@keyframes entrance-reveal-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ENTER(gif)のゆるやかな明滅でクリックを誘う */
+.entrance-enter-gif {
+  animation-name: entrance-reveal-up, entrance-pulse;
+  animation-duration: 0.9s, 2.4s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1), ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 1.2s, 1.2s;
+  animation-fill-mode: forwards, none;
+}
+
+@keyframes entrance-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entrance-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .entrance-enter-gif {
+    animation: none;
+  }
+}

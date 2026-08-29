@@ -1,0 +1,18 @@
+[
+  { "date": "2026.12.24", "tag": "log",         "text": "Development notes updated." },
+  { "date": "2026.12.11", "tag": "camera",      "text": "New photographs added." },
+  { "date": "2026.11.30", "tag": "gallery",     "text": "Illustrations updated." },
+  { "date": "2026.11.18", "tag": "character",   "text": "New profile released." },
+  { "date": "2026.11.07", "tag": "world",       "text": "World archive expanded." },
+  { "date": "2026.10.31", "tag": "special",     "text": "Halloween page added." },
+  { "date": "2026.10.20", "tag": "music",       "text": "Background music updated." },
+  { "date": "2026.10.08", "tag": "illustration","text": "New artwork uploaded." },
+  { "date": "2026.09.26", "tag": "download",    "text": "Wallpapers available." },
+  { "date": "2026.09.15", "tag": "goods",       "text": "Store updated." },
+  { "date": "2026.09.01", "tag": "log",         "text": "Site maintenance." },
+  { "date": "2026.08.24", "tag": "camera",      "text": "Photo archive expanded." },
+  { "date": "2026.08.10", "tag": "character",   "text": "Character file updated." },
+  { "date": "2026.07.28", "tag": "gallery",     "text": "New gallery section." },
+  { "date": "2026.07.19", "tag": "world",       "text": "Location records updated." },
+  { "date": "2026.07.12", "tag": "website open","text": "Welcome." }
+]

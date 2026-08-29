@@ -1,0 +1,351 @@
+/* ==========================================================================
+   COMPONENTS
+   使い回すパーツ単位のスタイル。
+   ========================================================================== */
+
+/* --- Film grain / vignette: ページ全体に薄く敷く空気感 --- */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* --- Logo: 元データの実際のロゴ画像を使用 --- */
+.site-logo {
+  display: inline-block;
+  line-height: 0;
+}
+
+.site-logo img {
+  height: clamp(44px, 8vw, 88px);
+  width: auto;
+  display: block;
+}
+
+/* --- Global nav links: 元データは背景塗りなしの細いシアン枠線+シアン文字 --- */
+.global-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 14px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  position: relative;
+  transition: background-color 0.2s var(--ease-out);
+}
+
+.global-nav a img {
+  display: block;
+  height: 15px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.global-nav a:hover,
+.global-nav a:focus-visible {
+  background-color: #ffffff;
+  animation: glitch-text 0.28s steps(2, end);
+}
+
+.global-nav a:hover img,
+.global-nav a:focus-visible img,
+.global-nav a.is-active img {
+  filter: brightness(0);
+}
+
+.global-nav a:focus-visible {
+  outline: 1px dashed #ffffff;
+  outline-offset: 2px;
+}
+
+.global-nav a.is-active {
+  background-color: var(--accent-cyan);
+}
+
+@keyframes glitch-text {
+  0% { text-shadow: none; transform: translate(0, 0); }
+  25% { text-shadow: -1px 0 var(--accent-blood-bright), 1px 0 var(--accent-blue-glow); transform: translate(-1px, 0); }
+  50% { text-shadow: 1px 0 var(--accent-blood-bright), -1px 0 var(--accent-blue-glow); transform: translate(1px, 0); }
+  75% { text-shadow: -1px 0 var(--accent-blue-glow); transform: translate(0, 0); }
+  100% { text-shadow: none; transform: translate(0, 0); }
+}
+
+/* --- Marquee: 歓迎文が横に流れる帯（枠なし・太字で目立たせる） --- */
+.marquee-bar {
+  background: transparent;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(14px, 3vw, 26px);
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  text-shadow:
+    -0.5px -0.5px 0 #000,
+     0.5px -0.5px 0 #000,
+    -0.5px  0.5px 0 #000,
+     0.5px  0.5px 0 #000;
+  padding-block: 10px;
+  transform-origin: left center;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track span {
+  padding-inline: var(--space-4);
+}
+
+@keyframes marquee-scroll {
+  from { transform: scaleX(0.86) translateX(0); }
+  to { transform: scaleX(0.86) translateX(-50%); }
+}
+
+/* --- Panel: 共通の下地(video-panelとも共有するため最小限に) --- */
+.panel {
+  background: var(--bg-void);
+}
+
+/* NEWS見出し自体は枠で囲わず、情報欄(news-log)のみを枠で囲う。
+   バナーとの間の余白も枠内に含めるためpadding-bottomで囲い込み、
+   main-col-right側のgapは0にしている */
+.news-panel {
+  margin-bottom: 0;
+}
+
+.panel-heading {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: var(--accent-cyan);
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--accent-cyan);
+}
+
+/* NEWSの見出し自体には線を付けない。四角枠は情報欄(news-log)側だけに残す */
+.news-panel .panel-heading {
+  border-bottom: none;
+}
+
+/* --- News log table: 情報欄のみを枠で囲う --- */
+.news-log {
+  max-height: 620px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 0.75px solid var(--accent-cyan);
+  padding-bottom: var(--space-4);
+  background: var(--bg-void);
+}
+
+.news-log table {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  border-collapse: collapse;
+}
+
+.news-log td {
+  padding: 1px 10px;
+  border-bottom: none;
+  vertical-align: top;
+  color: var(--accent-cyan);
+  line-height: 1.25;
+}
+
+.news-log tr:hover td {
+  color: #ffffff;
+}
+
+.news-log .news-date {
+  white-space: nowrap;
+}
+
+.news-log .news-tag {
+  white-space: nowrap;
+}
+
+/* スクロールバーもテーマに合わせる */
+.news-log::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news-log::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+.news-log::-webkit-scrollbar-thumb {
+  background: var(--line-bright);
+}
+
+/* --- Ad banner: 90〜2000年代のバナー広告然とした矩形リンク --- */
+.ad-banner {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 2247 / 531;
+  background-color: #000000;
+  isolation: isolate;
+}
+
+.ad-banner::before {
+  /* 実写真が入る前の仮の下地色(元データ準拠のブルーグレー) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--banner-bg, linear-gradient(135deg, var(--banner-placeholder), var(--panel-slate)));
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.35s var(--ease-out), transform 6s linear;
+  transform: scale(1.02);
+}
+
+.ad-banner:hover::before,
+.ad-banner:focus-visible::before {
+  filter: grayscale(0) brightness(0.95);
+  transform: scale(1.08);
+}
+
+.ad-banner::after {
+  /* ホバー時に一瞬走るスキャンライン・グリッチ */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.ad-banner:hover::after {
+  opacity: 1;
+}
+
+.ad-banner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 14px;
+  background: linear-gradient(90deg, rgba(5, 5, 6, 0.78) 0%, rgba(5, 5, 6, 0.35) 65%, rgba(5, 5, 6, 0.65) 100%);
+}
+
+.ad-banner-title {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+/* --- サブテキスト(タグ+説明文)は1ブロックにまとめ、右寄せで縦に並べる --- */
+.ad-banner-subtext {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.ad-banner-tag {
+  display: block;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.ad-banner-copy {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: #ffffff;
+  text-align: right;
+}
+
+/* --- Section eyebrow (ページ上部の飾り文字) --- */
+.eyebrow-strip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--ink-dim);
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- BGM toggle: 画面右下に固定表示する再生/停止ボタン --- */
+.bgm-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 14px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--accent-cyan);
+  background: rgba(3, 3, 4, 0.85);
+  border: 1px solid var(--accent-cyan);
+  backdrop-filter: blur(2px);
+  transition: color 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+}
+
+.bgm-toggle:hover,
+.bgm-toggle:focus-visible {
+  color: var(--bg-void);
+  background-color: var(--accent-cyan);
+}
+
+.bgm-toggle .bgm-icon {
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* 再生中はノートアイコンをゆっくり明滅させる */
+.bgm-toggle[aria-pressed="true"] .bgm-icon {
+  animation: bgm-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes bgm-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (max-width: 600px) {
+  .bgm-toggle {
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}

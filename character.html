@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHARACTER — B∀D H〇∀ D∀Y</title>
+  <meta name="description" content="HELLNEL管理下のキャラクターデータファイル。B∀D H〇∀ D∀Yに登場するゴス達の記録。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Bitter:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheets: css/js/data/assetsフォルダに分けた構成 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/character.css" />
+</head>
+<body class="character-page">
+
+  <div class="site-wrap">
+
+    <!-- ================= HEADER(このページは淡い水色の帯) ================= -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="assets/logo.png" alt="B∀D H〇∀ D∀Y" />
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="about.html"><img src="assets/nav_mint_about.png" alt="ABOUT" /></a></li>
+          <li><a href="world.html"><img src="assets/nav_mint_world.png" alt="WORLD" /></a></li>
+          <li><a href="character.html" class="is-active" aria-current="page"><img src="assets/nav_mint_character.png" alt="CHARACTER" /></a></li>
+          <li><a href="gallery.html"><img src="assets/nav_mint_gallery.png" alt="GALLERY" /></a></li>
+          <li><a href="store.html"><img src="assets/nav_mint_store.png" alt="STORE" /></a></li>
+          <li><a href="links.html"><img src="assets/nav_mint_limks.png" alt="LIMKS" /></a></li>
+          <li><a href="interactive.html"><img src="assets/nav_mint_interactive.png" alt="INTERACTIVE" /></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= BGM: 枠なし・下線だけのシンプルなトグル(ページ上部) ================= -->
+    <div class="bgm-bar">
+      <audio id="bgm-audio" src="assets/bgm-character.mp3" loop preload="none"></audio>
+      <button id="bgm-toggle" class="bgm-toggle-line" type="button" aria-pressed="false">
+        <span class="bgm-icon">♪</span>
+        <span class="bgm-label">OFF</span>
+      </button>
+    </div>
+
+    <!-- ================= 注意書き(淡い水色の帯、黒文字) ================= -->
+    <div class="notice-band reveal-on-load">
+      <p class="archive-tag">【HELLNEL PERSONNEL ARCHIVE】</p>
+      <p class="notice-text">
+        This archive contains personnel records maintained by HELLNEL.<br />
+        The information presented here has been compiled from observations, investigations, and official reports.<br />
+        Record contents are subject to revision as new findings emerge or as individuals undergo significant changes.<br />
+        Certain information has been classified and remains inaccessible.<br />
+        Character pages are currently being updated. New records and revisions will be added as they become available.
+      </p>
+    </div>
+
+
+  </div>
+
+  <!-- ================= 黒背景のデータファイルエリア ================= -->
+  <main class="character-data-zone">
+    <div class="site-wrap">
+
+      <h1 class="character-data-title">
+        <img src="assets/character-data-file-title.png" alt="CHARACTER DATA FILE" />
+      </h1>
+
+      <div id="type-filter" class="type-filter" aria-label="タイプで絞り込み">
+        <!-- character.js が characters.json のtypes配列から動的に描画する -->
+      </div>
+
+      <div id="character-grid" class="character-grid">
+        <!-- character.js が characters.json からカードを動的に描画する -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="site-wrap">
+      <div class="footer-meta">
+        <span>&copy; B∀D H〇∀ D∀Y</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/character.js"></script>
+</body>
+</html>

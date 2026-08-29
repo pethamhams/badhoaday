@@ -1,0 +1,95 @@
+/* ==========================================================================
+   LAYOUT
+   ページの骨格。グリッド・大枠の配置のみを扱う。
+   見た目の装飾(色・影・フォント演出)は components.css / pages/home.css へ。
+   ========================================================================== */
+
+body {
+  background-color: var(--bg-void);
+  color: var(--ink);
+  font-family: var(--font-serif);
+}
+
+.site-wrap {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* --- Header: ロゴ + グローバルナビ ---
+   grain/vignette演出（z-index 998〜999）より手前に出し、
+   ロゴが暗く沈んで見える問題を防ぐ */
+.site-header {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+}
+
+.global-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+/* --- Marquee bar (welcome text) --- */
+.marquee-bar {
+  overflow: hidden;
+}
+
+/* --- Main two-column layout ---
+   左: キービジュアル + 動画 / 右: NEWS + バナー群 */
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+  gap: var(--space-5);
+  padding-block: var(--space-6);
+}
+
+.main-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.main-col-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.banner-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: var(--space-4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 960px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    padding-block: var(--space-5);
+  }
+}
+
+@media (max-width: 600px) {
+  .site-wrap {
+    padding-inline: var(--space-3);
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

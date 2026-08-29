@@ -1,0 +1,221 @@
+/* ==========================================================================
+   STORE PAGE (store.html) 専用スタイル
+   元データのSVG解析結果:
+   - 背景(back): 黒地に星型GIFを複数散りばめた装飾
+   - ヘッダー: 写真GIFを背景に、ロゴ・ナビ(白)・スクロールする案内文
+   - STOREタイトル + アイコンGIF
+   - 商品グリッド: 商品画像 / 商品名(sold out) / 金額(0.00 JPY) / ADD TO CART
+   ========================================================================== */
+
+.store-page {
+  background-color: #000000;
+  position: relative;
+}
+
+/* --- 背景の星型GIF装飾(back レイヤーをそのまま反映) --- */
+.store-bg-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.store-bg-deco img {
+  position: absolute;
+  opacity: 0.9;
+}
+
+/* --- ヘッダー: 写真GIFを背景に敷く --- */
+.store-header-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 3mm;
+  overflow: hidden;
+}
+
+.store-header-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 0;
+}
+
+.store-page .site-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: none;
+}
+
+.store-page .global-nav a {
+  border: 1px solid #ffffff;
+  background: transparent;
+}
+
+.store-page .global-nav a img {
+  filter: brightness(0) invert(1);
+}
+
+.store-page .global-nav a:hover,
+.store-page .global-nav a:focus-visible {
+  background-color: #ffffff;
+}
+
+.store-page .global-nav a:hover img,
+.store-page .global-nav a:focus-visible img,
+.store-page .global-nav a.is-active img {
+  filter: brightness(0);
+}
+
+/* --- スクロールする案内文(元データの長いテキストをマーキー化) --- */
+.store-marquee-bar {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  overflow: hidden;
+}
+
+.store-marquee-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 23px;
+  color: #ffffff;
+  padding-block: 8px;
+  animation: marquee-scroll 13s linear infinite;
+}
+
+.store-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.store-marquee-track span {
+  padding-inline: var(--space-4);
+}
+
+/* --- STORE タイトル + アイコンGIF --- */
+.store-title-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-4) 0 var(--space-3);
+}
+
+.store-title-row h1 {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-ui), 'Noto Sans JP';
+  font-weight: 900;
+  font-size: clamp(28.8px, 4.8vw, 48px);
+  color: #0000ff;
+}
+
+.store-title-row h1 img {
+  position: absolute;
+  right: calc(0.02em - 13.5mm);
+  top: -0.4em;
+  height: 1.584em;
+  width: auto;
+}
+
+/* --- 商品グリッド --- */
+.store-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 15mm;
+  padding-bottom: var(--space-7);
+}
+
+.store-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.store-card-badge {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 81.075px;
+  height: auto;
+  transform: rotate(-20.76deg);
+  z-index: 2;
+}
+
+.store-card-photo {
+  position: relative;
+  width: 70%;
+}
+
+.store-card-photo img:not(.store-card-badge) {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.store-card-name {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 29px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 3mm;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.store-card-price {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  color: #9bb5ff;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.store-card-cart {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #9bb5ff;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.store-card-cart:hover,
+.store-card-cart:focus-visible {
+  color: #ffffff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .store-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .store-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

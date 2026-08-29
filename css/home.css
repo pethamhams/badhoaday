@@ -1,0 +1,123 @@
+/* ==========================================================================
+   HOME PAGE (index.html) 専用スタイル
+   ========================================================================== */
+
+/* --- Key visual: キャラクターイラストの代わりに雰囲気で構成する疑似ビジュアル --- */
+.key-visual {
+  position: relative;
+  aspect-ratio: 524 / 733;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background-image: url("../assets/hero-key-visual.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-color: #0a0a10;
+}
+
+.key-visual-fog {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(92, 109, 196, 0.12), transparent);
+  z-index: 1;
+}
+
+.key-visual-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.key-visual-caption .kv-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(30px, 5vw, 48px);
+  color: var(--ink-bright);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.key-visual-caption .kv-subtitle {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+}
+
+/* --- Video embed panel: 80%に縮小し、バナー側(右)に寄せる --- */
+.video-panel {
+  width: 80%;
+  margin-left: auto;
+  margin-right: 0;
+  border: 2px solid #000000;
+  background: var(--panel-slate);
+}
+
+.video-panel .panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-frame-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Banner images: 添付いただいた実データ(TOP-bunner1〜7)をレイヤー順に対応させています
+   bunner1=HBD / bunner2=HELLNEL / bunner3=NYX BATH / bunner4=OKEA /
+   bunner5=DALCANTE / bunner6=HEAVY DOLL / bunner7=FRIEND LIFE --- */
+.ad-banner.theme-hbd        { --banner-bg: url("../assets/banner-hbd.jpg"); }
+.ad-banner.theme-hellnel    { --banner-bg: url("../assets/banner-hellnel.jpg"); }
+.ad-banner.theme-nyx        { --banner-bg: url("../assets/banner-nyxbath.jpg"); }
+.ad-banner.theme-okea       { --banner-bg: url("../assets/banner-okea.jpg"); }
+.ad-banner.theme-dalcante   { --banner-bg: url("../assets/banner-dalcante.jpg"); }
+.ad-banner.theme-heavydoll  { --banner-bg: url("../assets/banner-heavydoll.jpg"); }
+.ad-banner.theme-friendlife { --banner-bg: url("../assets/banner-friendlife.jpg"); }
+
+/* DALCANTEバナーはトラックリストを縦に添える特殊レイアウト */
+.dalcante-tracklist {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  line-height: 1.7;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
+/* --- Footer content --- */
+.site-footer .footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+  .key-visual-caption .kv-subtitle {
+    letter-spacing: 0.2em;
+  }
+}

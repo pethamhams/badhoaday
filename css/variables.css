@@ -1,0 +1,59 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   このサイトの見た目はすべてここから派生する。
+   色・書体・余白の基準値をまとめて管理し、後からの調整を一箇所で完結させる。
+   ========================================================================== */
+
+:root {
+  /* --- Color: base --- */
+  --bg-void: #050506;       /* ページ全体の下地。ほぼ純黒 */
+  --bg-panel: #0c0c11;      /* ニュース欄・バナー等のパネル背景 */
+  --bg-panel-raised: #131319; /* パネルより一段明るい面 */
+
+  /* --- Color: text --- */
+  --ink: #c7c7d2;           /* 本文 */
+  --ink-dim: #7d7d8c;       /* キャプション・補助情報 */
+  --ink-bright: #f1f1f6;    /* 見出し・強調 */
+
+  /* --- Color: accent --- */
+  --accent-blue: #5c6dc4;       /* キービジュアル系の青。リンクやフォーカスに */
+  --accent-blue-glow: #7d8de0;  /* ホバー時の明るい青 */
+  --accent-cyan: #c2e9fb;       /* 元データSVGから抽出した正式なアクセント色(氷のようなシアン) */
+  --accent-blood: #6e1b26;      /* 罫線・警告・装飾の血赤 */
+  --accent-blood-bright: #9c2c3a;
+  --banner-placeholder: #93a5cf; /* バナー写真が入る前の仮の下地色(元データ準拠) */
+  --panel-slate: #3b4252;        /* キービジュアル/動画枠のプレースホルダー色(元データ準拠) */
+
+  /* --- Color: 淡色テーマ(CHARACTER等、内側ページの上部帯・カード用) --- */
+  --pale-bg: #d7e5ed;    /* 淡い水色の背景(元データ準拠) */
+  --pale-mint: #dbe6ed;  /* カード/アウトラインの淡色(元データ準拠) */
+
+  /* --- Line / border --- */
+  --line: #24242e;
+  --line-bright: #3a3a4a;
+
+  /* --- Typography ---
+     "ゴシック体"(サンセリフ)で全体を統一。太さの違いだけで
+     ロゴ・見出し・本文・データ表記の階層を作る、レトロブログ的な組み方。 */
+  --font-gothic: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  --font-display: var(--font-gothic);  /* ロゴ / 巨大見出し（900） */
+  --font-heading: var(--font-gothic);  /* セクション見出し（700） */
+  --font-serif: var(--font-gothic);    /* 本文（400〜500） */
+  --font-mono: var(--font-gothic);     /* ナビ・ログ・データ（500） */
+
+  /* --- Spacing scale --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* --- Layout --- */
+  --content-max: 1200px;
+  --radius: 0px; /* 角丸なし。当時のテーブルレイアウトの硬質さを保つ */
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

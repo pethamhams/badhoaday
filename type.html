@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TYPE — B∀D H〇∀ D∀Y</title>
+  <meta name="description" content="B∀D H〇∀ D∀Y に登場するGOTHタイプ(HEVIL / HELAUNE / HECRIS など)の分類ページ。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/type.css" />
+</head>
+<body class="type-page">
+
+  <div class="site-wrap">
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="assets/logo.png" alt="B∀D H〇∀ D∀Y" />
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="about.html"><img src="assets/nav_mint_about.png" alt="ABOUT" /></a></li>
+          <li><a href="world.html"><img src="assets/nav_mint_world.png" alt="WORLD" /></a></li>
+          <li><a href="character.html"><img src="assets/nav_mint_character.png" alt="CHARACTER" /></a></li>
+          <li><a href="gallery.html"><img src="assets/nav_mint_gallery.png" alt="GALLERY" /></a></li>
+          <li><a href="store.html"><img src="assets/nav_mint_store.png" alt="STORE" /></a></li>
+          <li><a href="links.html"><img src="assets/nav_mint_limks.png" alt="LIMKS" /></a></li>
+          <li><a href="interactive.html"><img src="assets/nav_mint_interactive.png" alt="INTERACTIVE" /></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= TYPEタイトル ================= -->
+    <div class="type-title-row">
+      <img src="assets/type-flourish-icon.gif" alt="" aria-hidden="true" class="type-flourish" />
+      <h1>TYPE</h1>
+      <img src="assets/type-flourish-icon.gif" alt="" aria-hidden="true" class="type-flourish" />
+    </div>
+
+    <!-- タイトル説明文(元データではArial Italicで反映されていた) -->
+    <div class="type-lede">
+      <p>TYPE is the official biological classification assigned to all recorded individuals.</p>
+      <p>TYPE determines an individual's fundamental biological structure, external morphology,<br />innate abilities, and physiological characteristics.</p>
+      <p>It does not define personality, occupation, ideology, or social standing. Significant variation has been observed within every TYPE.</p>
+      <p>Hybridization,mutation, and unidentified subtypes have also been confirmed. The following records have been compiled and approved by the HELLNEL Society Archive Division.</p>
+    </div>
+
+    <!-- 装飾GIF(タイトルと写真パネルの間) -->
+    <img src="assets/type-deco-flourish.gif" alt="" aria-hidden="true" class="type-deco-flourish" />
+
+    <!-- ================= モニター型パネル + タイプ選択(画面の黒い部分に配置) ================= -->
+    <div class="type-photo-panel">
+      <img class="type-monitor-frame" src="assets/type-monitor-frame.png" alt="" aria-hidden="true" />
+      <div class="type-screen">
+        <img id="type-photo" class="type-photo" src="" alt="" aria-hidden="true" style="display:none;" />
+        <p id="type-description" class="type-description" style="display:none;"></p>
+        <div id="type-selector" class="type-selector">
+          <!-- type.js が type-data.json から動的に描画する(HEVIL〜ENEMYの順) -->
+        </div>
+      </div>
+      <!-- モニター画面の黒い部分の1番下に配置(モニターフレームとグループ扱い) -->
+      <img class="type-bar-divider" src="assets/type-bar-divider.gif" alt="" aria-hidden="true" />
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-meta">
+        <span>&copy; B∀D H〇∀ D∀Y</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/type.js"></script>
+</body>
+</html>

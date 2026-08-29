@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B∀D H〇∀ D∀Y — Official Site</title>
+  <meta name="description" content="オリジナルゴシック&ホラープロジェクト『B∀D H〇∀ D∀Y』公式サイト。" />
+
+  <!-- Google Fonts: ブラックレター / 装飾セリフ / クラシックセリフ / 等幅 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheets: 読み込み順が重要（reset → variables → layout → components → page） -->
+  <!-- css/js/data/assetsフォルダに分けて管理しています -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <!-- 全体に薄く敷くグレイン/ビネット演出。装飾のみでコンテンツを含まないため aria-hidden -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="vignette-overlay" aria-hidden="true"></div>
+
+  <div class="site-wrap">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+      <a href="index.html" class="site-logo">
+        <img src="assets/logo.png" alt="B∀D H〇∀ D∀Y" />
+      </a>
+
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="about.html"><img src="assets/nav_cyan_about.png" alt="ABOUT" /></a></li>
+          <li><a href="world.html"><img src="assets/nav_cyan_world.png" alt="WORLD" /></a></li>
+          <li><a href="character.html"><img src="assets/nav_cyan_character.png" alt="CHARACTER" /></a></li>
+          <li><a href="gallery.html"><img src="assets/nav_cyan_gallery.png" alt="GALLERY" /></a></li>
+          <li><a href="store.html"><img src="assets/nav_cyan_store.png" alt="STORE" /></a></li>
+          <li><a href="links.html"><img src="assets/nav_cyan_limks.png" alt="LIMKS" /></a></li>
+          <li><a href="interactive.html"><img src="assets/nav_cyan_interactive.png" alt="INTERACTIVE" /></a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- ================= WELCOME MARQUEE(端から端まで流れるようsite-wrapの外に配置) ================= -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span
+        >WELCOME TO B∀D H〇∀ D∀Y //ORIGINAL GOTHIC &amp; HORROR PROJECT //PLEASE
+        ENJOY YOUR STAY //CHARACTER FILES ARE UPDATED REGULARLY //THANK YOU FOR
+        VISITING.</span
+      >
+    </div>
+  </div>
+
+  <div class="site-wrap">
+
+    <!-- ================= MAIN ================= -->
+    <main>
+      <div class="main-grid">
+
+        <!-- ---- LEFT: キービジュアル + 動画 ---- -->
+        <div class="main-col-left">
+
+          <div class="key-visual"></div>
+
+          <div class="video-panel panel">
+            <div class="video-frame-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/YT6NumwvXDU"
+                title="B∀D H〇∀ D∀Y — Tomodachi Life"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ---- RIGHT: NEWS + バナー群 ---- -->
+        <div class="main-col-right">
+
+          <section class="panel news-panel">
+            <h2 class="panel-heading">NEWS</h2>
+            <div class="news-log">
+              <table>
+                <tbody id="news-log-body">
+                  <!-- main.js が js/data/news.json から動的に描画する -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="banner-stack" aria-label="関連施設・イベントのお知らせ">
+
+            <a href="world.html#hbd" class="ad-banner theme-hbd">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">HBD</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">NOW ENROLLING</span>
+                  <p class="ad-banner-copy">Welcome to Harrowed Bane Dirge.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="type.html" class="ad-banner theme-hellnel">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">HELLNEL</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">RECRUITING CLERGY</span>
+                  <p class="ad-banner-copy">Faith is Our Strength.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="world.html#nbt" class="ad-banner theme-nyx">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">NYX BATH</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">NOW HIRING</span>
+                  <p class="ad-banner-copy">Keep the City in Motion.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="world.html#okea" class="ad-banner theme-okea">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">OKEA</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">NEW ARRIVALS</span>
+                  <p class="ad-banner-copy">Arm Yourself in Black.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="store.html#heavy-doll" class="ad-banner theme-heavydoll">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">HEAVY DOLL</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">NEW COLLECTION</span>
+                  <p class="ad-banner-copy">Darkness Never Goes Out of Style.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="interactive.html#friend-life" class="ad-banner theme-friendlife">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">FRIEND LIFE</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">MINI GAME</span>
+                  <p class="ad-banner-copy">Peek into their tomodachi life.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="character.html#dalcante" class="ad-banner theme-dalcante">
+              <div class="ad-banner-content">
+                <span class="ad-banner-title">DALCANTE</span>
+                <div class="ad-banner-subtext">
+                  <span class="ad-banner-tag">NEW ALBUM OUT NOW</span>
+                  <div class="dalcante-tracklist">
+                    01. BLACK REQUIEM<br />
+                    02. GRAVE OPERA<br />
+                    03. BLEEDING CHOIR<br />
+                    04. DIRGE OF CROWNS<br />
+                    05. NECROPHONIA<br />
+                    06. NOCTURNAL MASS
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-meta">
+        <span>&copy; B∀D H〇∀ D∀Y</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ================= BGM ================= -->
+  <!-- ブラウザの自動再生制限により、ページ読込時ではなく
+       ユーザーがボタンを押した時点で再生を開始する -->
+  <audio id="bgm-audio" src="assets/bgm.mp3" loop preload="none"></audio>
+  <button id="bgm-toggle" class="bgm-toggle" type="button" aria-pressed="false">
+    <span class="bgm-icon">♪</span>
+    <span class="bgm-label">OFF</span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
