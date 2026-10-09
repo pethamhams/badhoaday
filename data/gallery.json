@@ -1,0 +1,20 @@
+{
+  "photoCount": "100+",
+  "videoCount": "40+",
+  "totalItems": 140,
+  "shownItems": 12,
+  "items": [
+    { "type": "photo", "image": "assets/gallery-sample-01.jpg", "alt": "VRChatサンプル写真01" },
+    { "type": "world", "image": "assets/gallery-sample-02.jpg", "alt": "VRChatサンプル写真02" },
+    { "type": "shorts", "image": "assets/gallery-sample-03.jpg", "alt": "VRChatサンプル写真03" },
+    { "type": "video", "video": true, "label": "YOUTUBE VIDEO" },
+    { "type": "photo", "image": "assets/gallery-sample-04.jpg", "alt": "VRChatサンプル写真04" },
+    { "type": "photo", "image": "assets/gallery-sample-01.jpg", "alt": "VRChatサンプル写真05" },
+    { "type": "world", "image": "assets/gallery-sample-02.jpg", "alt": "VRChatサンプル写真06" },
+    { "type": "video", "video": true, "label": "YOUTUBE VIDEO" },
+    { "type": "photo", "image": "assets/gallery-sample-03.jpg", "alt": "VRChatサンプル写真07" },
+    { "type": "shorts", "image": "assets/gallery-sample-04.jpg", "alt": "VRChatサンプル写真08" },
+    { "type": "photo", "image": "assets/gallery-sample-01.jpg", "alt": "VRChatサンプル写真09" },
+    { "type": "world", "image": "assets/gallery-sample-02.jpg", "alt": "VRChatサンプル写真10" }
+  ]
+}

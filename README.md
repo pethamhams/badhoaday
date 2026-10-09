@@ -19,6 +19,7 @@ js/       page scripts
 - `store.html` — STORE page
 - `entrance.html` — Entrance / cushion page
 - `type.html` — TYPE (GOTH race classification) page
+- `gallery.html` — VRC/3D GALLERY (VRChat media archive) page
 
 Shared stylesheets: `css/reset.css`, `css/variables.css`, `css/layout.css`,
 `css/components.css`. Each page also has its own page-specific stylesheet

@@ -94,6 +94,16 @@
 .ad-banner.theme-heavydoll  { --banner-bg: url("../assets/banner-heavydoll.jpg"); }
 .ad-banner.theme-friendlife { --banner-bg: url("../assets/banner-friendlife.jpg"); }
 
+/* GALLERYページへの仮バナー: 専用の写真素材がまだ無いため、
+   他バナーと馴染むグラデーション下地のみで構成(正式画像が届き次第差し替え) */
+.ad-banner.theme-gallery-temp {
+  --banner-bg: linear-gradient(135deg, #1c2430, #06080c 70%);
+}
+
+.ad-banner.theme-gallery-temp .ad-banner-tag {
+  color: var(--accent-cyan);
+}
+
 /* DALCANTEバナーはトラックリストを縦に添える特殊レイアウト */
 .dalcante-tracklist {
   font-family: var(--font-ui);
@@ -104,7 +114,11 @@
   text-align: right;
 }
 
-/* --- Footer content --- */
+/* --- Footer: NEWS/バナー列より下にさらに余白を取り、ページ下部へ押し下げる --- */
+.site-footer {
+  margin-top: var(--space-7);
+}
+
 .site-footer .footer-meta {
   display: flex;
   flex-wrap: wrap;
