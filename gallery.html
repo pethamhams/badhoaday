@@ -26,78 +26,54 @@
   <div class="vignette-overlay" aria-hidden="true"></div>
 
   <div class="site-wrap">
-    <!-- ================= HEADER ================= -->
-    <header class="site-header">
+    <!-- ================= HEADER(このページ専用: GALLERYタブと紛らわしいため、
+         サイト共通ナビは出さずロゴのみ表示) ================= -->
+    <header class="site-header gallery-header">
       <a href="index.html" class="site-logo">
         <img src="assets/logo.png" alt="B∀D H〇∀ D∀Y" />
       </a>
-
-      <nav class="global-nav" aria-label="グローバルナビゲーション">
-        <ul>
-          <li><a href="about.html"><img src="assets/nav_cyan_about.png" alt="ABOUT" /></a></li>
-          <li><a href="world.html"><img src="assets/nav_cyan_world.png" alt="WORLD" /></a></li>
-          <li><a href="character.html"><img src="assets/nav_cyan_character.png" alt="CHARACTER" /></a></li>
-          <li><a href="gallery.html" class="is-active" aria-current="page"><img src="assets/nav_cyan_gallery.png" alt="GALLERY" /></a></li>
-          <li><a href="store.html"><img src="assets/nav_cyan_store.png" alt="STORE" /></a></li>
-          <li><a href="links.html"><img src="assets/nav_cyan_limks.png" alt="LIMKS" /></a></li>
-          <li><a href="interactive.html"><img src="assets/nav_cyan_interactive.png" alt="INTERACTIVE" /></a></li>
-        </ul>
-      </nav>
     </header>
   </div>
 
   <div class="site-wrap">
     <main>
-      <!-- ================= GALLERY CARD ================= -->
-      <section class="gallery-card">
 
-        <div class="gallery-head">
-          <p class="gallery-eyebrow">VRChat / Media Archive</p>
-          <h1 class="gallery-title">GALLERY</h1>
-          <p class="gallery-counts">
-            <span>PHOTOS <span id="gallery-photo-count">100+</span></span>
-            <span class="gallery-count-sep">/</span>
-            <span>VIDEOS <span id="gallery-video-count">40+</span></span>
-          </p>
-        </div>
-
-        <div class="gallery-filter-row">
-          <p class="gallery-filter-label">Filter</p>
-          <div class="gallery-filter-tabs" role="tablist" aria-label="ギャラリーフィルター">
-            <button type="button" class="gallery-filter-tab is-active" data-filter="all">ALL</button>
-            <button type="button" class="gallery-filter-tab" data-filter="photo">PHOTO</button>
-            <button type="button" class="gallery-filter-tab" data-filter="video">VIDEO</button>
-            <button type="button" class="gallery-filter-tab" data-filter="shorts">SHORTS</button>
-            <button type="button" class="gallery-filter-tab" data-filter="world">WORLD</button>
-          </div>
-        </div>
-
-        <div class="gallery-grid-wrap">
-          <div class="gallery-grid" id="gallery-grid">
-            <!-- gallery.js が data/gallery.json から動的に描画する -->
-          </div>
-        </div>
-
-        <p class="gallery-disclaimer">
-          レイアウトの模式図です。画像は配置イメージで、実際のVRChat写真ではありません。
+      <div class="gallery-head">
+        <p class="eyebrow-strip">VRChat / Media Archive</p>
+        <h1 class="gallery-title">GALLERY</h1>
+        <p class="gallery-counts">
+          <span>PHOTOS <span id="gallery-photo-count">100+</span></span>
+          <span class="gallery-count-sep">/</span>
+          <span>VIDEOS <span id="gallery-video-count">40+</span></span>
         </p>
+      </div>
 
-        <div class="gallery-footer-bar">
-          <span>Showing <span id="gallery-shown-count">12</span> of <span id="gallery-total-count">140</span> items</span>
-          <button type="button" class="gallery-load-more" id="gallery-load-more">LOAD MORE &#8595;</button>
+      <div class="gallery-filter-row">
+        <p class="gallery-filter-label">Filter</p>
+        <div class="gallery-filter-tabs" role="tablist" aria-label="ギャラリーフィルター">
+          <button type="button" class="gallery-filter-tab is-active" data-filter="all">ALL</button>
+          <button type="button" class="gallery-filter-tab" data-filter="photo">PHOTO</button>
+          <button type="button" class="gallery-filter-tab" data-filter="video">VIDEO</button>
+          <button type="button" class="gallery-filter-tab" data-filter="shorts">SHORTS</button>
+          <button type="button" class="gallery-filter-tab" data-filter="world">WORLD</button>
         </div>
+      </div>
 
-        <div class="gallery-load-more-wrap">
-          <button type="button" class="gallery-load-more-circle" id="gallery-load-more-circle" aria-label="もっと見る">
-            &#8595;
-          </button>
-        </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- gallery.js が data/gallery.json から動的に描画する -->
+      </div>
 
-        <p class="gallery-load-more-notice" id="gallery-load-more-notice" hidden>
-          現在表示しているのはサンプルです。追加データは近日公開予定。
-        </p>
+      <div class="gallery-footer-bar">
+        <span>Showing <span id="gallery-shown-count">12</span> of <span id="gallery-total-count">140</span> items</span>
+        <button type="button" class="gallery-load-more" id="gallery-load-more">LOAD MORE &#8595;</button>
+      </div>
 
-      </section>
+      <div class="gallery-load-more-wrap">
+        <button type="button" class="gallery-load-more-circle" id="gallery-load-more-circle" aria-label="もっと見る">
+          &#8595;
+        </button>
+      </div>
+
     </main>
 
     <!-- ================= FOOTER ================= -->

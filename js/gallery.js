@@ -1,8 +1,6 @@
 /* ==========================================================================
    GALLERY.JS
    gallery.json を読み込み、VRC/3Dギャラリーのタイルとフィルタータブを描画する。
-   表示している画像はすべて配置イメージ(サンプル)であり、実際のVRChat
-   写真そのものではない点に注意(ページ内の注記テキストも参照)。
    ========================================================================== */
 
 (function () {
@@ -97,13 +95,9 @@
   function setupLoadMore() {
     const btn = document.getElementById("gallery-load-more");
     const arrowBtn = document.getElementById("gallery-load-more-circle");
-    const notice = document.getElementById("gallery-load-more-notice");
 
     function handleLoadMore() {
-      // サンプルデータのみのため、実際の追加読込は行わずメッセージのみ表示する。
-      if (notice) {
-        notice.hidden = false;
-      }
+      // TODO: 実データ連携後、ここで次ページ分のアイテムを追加読込する。
     }
 
     if (btn) btn.addEventListener("click", handleLoadMore);
